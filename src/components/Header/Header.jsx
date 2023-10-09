@@ -102,7 +102,7 @@ export default function Header() {
           </Popover>
 
           <a href="#" className="text-sm font-medium leading-6 text-gray-900">
-            Schedule
+            Price
           </a>
           <a href="#" className="text-sm font-medium leading-6 text-gray-900">
             About
