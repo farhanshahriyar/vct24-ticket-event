@@ -101,13 +101,13 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-medium leading-6 text-gray-900">
+          <a href="/price" className="text-sm font-medium leading-6 text-gray-900">
             Price
           </a>
-          <a href="#" className="text-sm font-medium leading-6 text-gray-900">
+          <a href="/about" className="text-sm font-medium leading-6 text-gray-900">
             About
           </a>
-          <a href="#" className="text-sm font-medium leading-6 text-gray-900">
+          <a href="/contact" className="text-sm font-medium leading-6 text-gray-900">
             Contact
           </a>
         </Popover.Group>
@@ -167,19 +167,19 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/price"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Schedule
+                  Price
                 </a>
                 <a
-                  href="#"
+                  href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   About
                 </a>
                 <a
-                  href="#"
+                  href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Contact
