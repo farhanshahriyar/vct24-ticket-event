@@ -35,9 +35,14 @@ const FeatureCard = ({ item = {}, index }) => {
                 </svg>
               </p>
             </div>
-              <Link to='/feature/1' className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-blue-900 hover:bg-gray-50 hover:underline'>
+              {/* <Link to='/feature/1' className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-blue-900 hover:bg-gray-50 hover:underline'>
                    Learn More
-            </Link>
+            </Link> */}
+           <Link to={`/feature/${item.id}`} className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-blue-900 hover:bg-gray-50 hover:underline'>
+              Learn More
+          </Link>
+
+
           </div>
         </div>
   )
