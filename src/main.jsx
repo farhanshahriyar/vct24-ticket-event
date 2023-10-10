@@ -12,6 +12,7 @@ import Register from './pages/Register/Register';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import PricePage from './pages/PricePage/PricePage';
+import FeatureDetails from './layouts/Features/FeatureDetails';
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/price",
         element: <PricePage/>,
+      },
+      {
+        path: "/feature/:id",
+        element: <FeatureDetails/>,
       },
     ],
   },
