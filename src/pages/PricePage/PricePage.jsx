@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { getAuth } from "firebase/auth";
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { toast } from 'react-hot-toast'
 
@@ -9,11 +11,31 @@ const includedFeatures = [
 ]
 
 export default function PricePage() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = getAuth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
 
- const paymentHandler = () => {
-    toast.success("Ticket Purchased Successfully. Thank you for joining this event.");
-  }
+//  const paymentHandler = () => {
+//     toast.success("Ticket Purchased Successfully. Thank you for joining this event.");
+//   }
+      const paymentHandler = () => {
+        if (!user) {
+          toast.error("You need to be registered to purchase a ticket.");
+          return;
+        }
+        toast.success("Ticket Purchased Successfully. Thank you for joining this event.");
+      }
+
 
 
   return (
@@ -55,12 +77,24 @@ export default function PricePage() {
                   <span className="text-5xl font-bold tracking-tight text-gray-900">$59</span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
                 </p>
-                <a onClick={paymentHandler}
+                {/* <a onClick={paymentHandler}
                   href="#"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Buy Ticket
-                </a>
+                </a> */}
+
+                  <a 
+                    onClick={paymentHandler}
+                    href="#"
+                    className={`mt-10 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold shadow-sm ${
+                      user ? "bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-white" : "bg-gray-400"
+                    }`}
+                    disabled={!user}
+                  >
+                    Buy Ticket
+                  </a>
+
                 <p className="mt-6 text-xs leading-5 text-gray-600">
                   Limited spots available! Get your ticket now and be part of the Valorant event of the year.
                 </p>

@@ -4,12 +4,14 @@ import { BiShowAlt } from 'react-icons/bi';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import auth from '../../firebase/firebase.config';
 import toast from 'react-hot-toast';
+// import { useUser } from '../../context/UserContext.js';
+
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const [registerError, setRegisterError] = useState(''); // error message show korar jonne
-
+    // const { setUser } = useUser();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -29,6 +31,7 @@ const Login = () => {
             const user = userCredential.user;
             // console.log(user);
             localStorage.setItem('user', JSON.stringify(user)); // Store user in local storage
+            // setUser(user);
             toast.success('User logged in successfully!');
             
             // Navigate korbe root directory after successful registration houar por

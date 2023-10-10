@@ -13,7 +13,7 @@ import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import PricePage from './pages/PricePage/PricePage';
 import FeatureDetails from './layouts/Features/FeatureDetails';
-
+// import { UserProvider } from './context/UserContext.js'
 
 const router = createBrowserRouter([
   {
@@ -54,6 +54,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+  
      <RouterProvider router={router} />
+
   </React.StrictMode>,
 )
