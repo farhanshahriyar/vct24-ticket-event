@@ -8,11 +8,30 @@ const Register = () => {
     // function navigate korbe from the hook theke pawar jonne
     const navigate = useNavigate();
 
+
+
     const handleRegister = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+
+        if (password.length < 6) {
+            toast.error('Password must be at least 6 characters long!');
+            return;
+        }
+
+        // password validation
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            toast.error('Password must contain 2 upper case');
+            return;
+        }
+
+        // special character validation
+        if (!/(?=.*[!@#$&*;])/.test(password)) {
+            toast.error('Password must contain 1 special character');
+            return;
+        }
 
         // create korar jonne user with email and password
         createUserWithEmailAndPassword(auth, email, password)
