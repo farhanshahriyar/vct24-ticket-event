@@ -13,7 +13,8 @@ import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import PricePage from './pages/PricePage/PricePage';
 import FeatureDetails from './layouts/Features/FeatureDetails';
-// import { UserProvider } from './context/UserContext.js'
+import Error from './pages/Error/ErrorPage';
+import Service from './pages/Service/Service';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "/feature/:id",
         element: <FeatureDetails/>,
+      },
+      {
+        path: "/error",
+        element: <Error/>,
+      },
+      {
+        path: "/services",
+        element: <Service/>,
       },
     ],
   },

@@ -9,7 +9,7 @@ return (
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
       <div className="col-span-full lg:col-span-1">
-      <img className="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="valorant champs"/>
+      <img className="mx-auto h-10 w-auto" src="https://assets.valorantesports.com/val/vct-logo.21d0c9ddeb.svg" alt="valorant champs"/>
         
       </div>
 
@@ -42,7 +42,7 @@ return (
         <form>
           <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-md p-2">
             <div className="w-full">
-              <label for="hero-input" className="sr-only">Search</label>
+              <label htmlFor="hero-input" className="sr-only">Search</label>
               <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent border-none shadow-sm rounded-md focus:z-10 focus:border-[#331391] focus:ring-blue-500" placeholder="Enter your email"/>
             </div>
             <a className="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-x-3 text-center bg-[#331391] hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4" href="#">
