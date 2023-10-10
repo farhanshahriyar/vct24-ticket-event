@@ -107,6 +107,9 @@ const Register = () => {
                 registerError && <p className="mt-4 text-center text-sm text-red-600">{registerError}</p>
               
             }
+            {
+                success && <p className="mt-4 text-center text-sm text-green-600">{success}</p>
+            }
 
             <p className="mt-10 text-center text-sm text-gray-500">
             Already member?
