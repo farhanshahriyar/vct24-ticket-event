@@ -1,35 +1,3 @@
-// import { Fragment, useState, useEffect } from 'react'
-// import { Disclosure, Menu, Transition } from '@headlessui/react'
-// import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-// import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-// import toast from 'react-hot-toast';
-// import { Link, useLocation } from 'react-router-dom';
-
-
-// // const navigation = [
-// //   { name: 'Service', href: '/services', current: true },
-// //   { name: 'Price', href: '/price', current: false },
-// //   { name: 'About', href: '/about', current: false },
-// //   { name: 'Contact', href: '/contact', current: false },
-// // ]
-
-// // active route 
-// const navigation = [
-//   { name: 'Service', href: '/services', current: location.pathname === '/services' },
-//   { name: 'Price', href: '/price', current: location.pathname === '/price' },
-//   { name: 'About', href: '/about', current: location.pathname === '/about' },
-//   { name: 'Contact', href: '/contact', current: location.pathname === '/contact' },
-// ];
-
-
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
-// export default function Header() {
-//   const [user, setUser] = useState(null);
-//   const location = useLocation();
-
 import { Fragment, useState, useEffect } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";

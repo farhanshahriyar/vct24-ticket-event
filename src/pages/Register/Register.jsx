@@ -11,7 +11,7 @@ const Register = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [registerError, setRegisterError] = useState(''); // error message show korar jonne
-    const [success, setSuccess] = useState(''); // success message show korar jonne
+    // const [success, setSuccess] = useState(''); // success message show korar jonne
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -21,7 +21,9 @@ const Register = () => {
 
         // reset error and success message
         setRegisterError('');
+        // setSuccess('');
 
+        // add validation
         if (password.length < 6) {
             toast.error('Password must be at least 6 characters long!');
             return;
@@ -46,7 +48,7 @@ const Register = () => {
             const user = userCredential.user;
             // console.log(user);
             localStorage.setItem('user', JSON.stringify(user)); // Store user in local storage
-            setSuccess('User registered successfully!');
+            // setSuccess('User registered successfully!');
             toast.success('User registered successfully!');
             
             // Navigate korbe root directory after successful registration houar por
@@ -55,8 +57,8 @@ const Register = () => {
         .catch((error) => {
             // Handle errors jodi khay 
             // console.error("Error registering the user:", error.message);
-            toast.error(error.message);
             setRegisterError(error.message);
+            toast.error(error.message);
         });
     }
 
@@ -104,13 +106,9 @@ const Register = () => {
             </div>
             </form>
             {
-                registerError && <p className="mt-4 text-center text-sm text-red-600">{registerError}</p>
+                registerError && <p className=" text-center text-sm text-red-600">{registerError}</p>
               
             }
-            {
-                success && <p className="mt-4 text-center text-sm text-green-600">{success}</p>
-            }
-
             <p className="mt-10 text-center text-sm text-gray-500">
             Already member?
             <a href="/login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Login here.</a>

@@ -1,19 +1,11 @@
-import React, { useState } from 'react'
+
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+
 
 const Footer = () => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+
   const subscribeHandler = () => {
-    if (!user) {
-      toast.error("You need to be login to subscribe.");
-      navigate("/login");
-      return;
-    }
-    else {
-      toast.success("You have subscribed successfully.");
-    }
+    toast.success('You have subscribed successfully!');
   }
 return (
     
