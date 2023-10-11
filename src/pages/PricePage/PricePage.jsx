@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getAuth } from "firebase/auth";
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { toast } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
 
 const includedFeatures = [
   'Exclusive in-game items',
@@ -12,6 +13,7 @@ const includedFeatures = [
 
 export default function PricePage() {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = getAuth().onAuthStateChanged((user) => {
@@ -31,6 +33,7 @@ export default function PricePage() {
       const paymentHandler = () => {
         if (!user) {
           toast.error("You need to be registered to purchase a ticket.");
+          navigate("/login");
           return;
         }
         toast.success("Ticket Purchased Successfully. Thank you for joining this event.");

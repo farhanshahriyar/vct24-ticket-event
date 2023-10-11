@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const subscribeHandler = () => {
+    if (!user) {
+      toast.error("You need to be login to subscribe.");
+      navigate("/login");
+      return;
+    }
+    else {
+      toast.success("You have subscribed successfully.");
+    }
+  }
 return (
     
 <>
@@ -45,7 +59,8 @@ return (
               <label htmlFor="hero-input" className="sr-only">Search</label>
               <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent border-none shadow-sm rounded-md focus:z-10 focus:border-[#331391] focus:ring-blue-500" placeholder="Enter your email"/>
             </div>
-            <a className="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-x-3 text-center bg-[#331391] hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4" href="#">
+            <a onClick={subscribeHandler}
+            className="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-x-3 text-center bg-[#331391] hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4" href="#">
               Subscribe
             </a>
           </div>

@@ -1,11 +1,22 @@
-import React from 'react'
-import { toast } from 'react-hot-toast';
+import React, { useState } from 'react'
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
   const contactHandler = (e) => {
     e.preventDefault();
     // alert("Thank you for contacting us. We will get back to you soon.");
-    toast.success("Thank you for contacting us.");
+    // toast.success("Thank you for contacting us.");
+    if (!user) {
+      toast.error("You need to be login to contact us.");
+      navigate("/login");
+      return;
+    }
+    else {
+      toast.success("Thank you for contacting us.");
+    }
   }
   return (
     <div>   

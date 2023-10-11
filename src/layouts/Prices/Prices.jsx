@@ -48,10 +48,10 @@ export default function Prices() {
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
                 </p>
                 <a
-                  href="#"
+                  href="/price"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Buy Ticket
+                  More Info
                 </a>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
                   Limited spots available! Get your ticket now and be part of the Valorant event of the year.
